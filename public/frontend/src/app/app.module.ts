@@ -7,13 +7,20 @@ import { HomeComponent } from './components/home/home.component';
 import { SidebarComponent } from './components/sidebar/sidebar.component';
 import { LayoutComponent } from './components/layout/layout.component';
 import { SidebarModule } from 'ng-sidebar';
+import { FileSelectDirective, FileDropDirective, FileUploader } from 'ng2-file-upload/ng2-file-upload';
+import { ImageUploaderComponent } from './components/image-uploader/image-uploader.component';
+import { ImageViewerComponent } from './components/image-viewer/image-viewer.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
     SidebarComponent,
-    LayoutComponent
+    LayoutComponent,
+    FileSelectDirective,
+    FileDropDirective,
+    ImageUploaderComponent,
+    ImageViewerComponent
   ],
   imports: [
     BrowserModule,
