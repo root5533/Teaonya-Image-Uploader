@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { IMAGES } from '../../constants/imageFiles';
+import { NgxSmartModalService } from 'ngx-smart-modal';
 
 @Component({
   selector: 'app-image-viewer',
@@ -9,10 +10,16 @@ import { IMAGES } from '../../constants/imageFiles';
 export class ImageViewerComponent implements OnInit {
 
   images = IMAGES;
+  selectedImage: any;
 
-  constructor() { }
+  constructor( public  modalService: NgxSmartModalService) { }
 
   ngOnInit() {
+  }
+
+  openModal(img: any) {
+    this.selectedImage = img;
+    this.modalService.getModal('myModal').open();
   }
 
 }

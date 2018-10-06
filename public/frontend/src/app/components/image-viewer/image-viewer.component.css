@@ -41,3 +41,11 @@
 .image-card p {
     text-align: justify;
 }
+
+.full-image img {
+    width: 100%;
+}
+
+.modal {
+    max-width: none !important;
+}

@@ -10,6 +10,7 @@ import { SidebarModule } from 'ng-sidebar';
 import { FileSelectDirective, FileDropDirective, FileUploader } from 'ng2-file-upload/ng2-file-upload';
 import { ImageUploaderComponent } from './components/image-uploader/image-uploader.component';
 import { ImageViewerComponent } from './components/image-viewer/image-viewer.component';
+import { NgxSmartModalModule } from 'ngx-smart-modal';
 
 @NgModule({
   declarations: [
@@ -25,7 +26,8 @@ import { ImageViewerComponent } from './components/image-viewer/image-viewer.com
   imports: [
     BrowserModule,
     AppRoutingModule,
-    SidebarModule.forRoot()
+    SidebarModule.forRoot(),
+    NgxSmartModalModule.forRoot()
   ],
   providers: [],
   bootstrap: [AppComponent]
