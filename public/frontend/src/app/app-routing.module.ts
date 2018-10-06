@@ -5,7 +5,7 @@ import { LayoutComponent } from './components/layout/layout.component';
 
 const routes: Routes = [
   {
-    path: 'uploader', component: LayoutComponent,
+    path: '', component: LayoutComponent,
     children: [
       { path: 'home', component: HomeComponent },
       { path: '', redirectTo: 'home', pathMatch: 'full' }
