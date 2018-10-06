@@ -1,20 +1,15 @@
-<div class="sidebar">
+<div class="sidebar" [ngClass]="{ 'sidebar-active': sidebarService.toggle === true }">
 
     <div class="sidebar-content">
-        <h2>Home</h2>
+        <h2>{{sidebarService.selectedTag}}</h2>
     </div>
 
-    <div class="sidebar-nav">
-        <div class="list-group list-group-flush" style="width: 100%;">
-            <a href="#" class="list-group-item list-group-item-action active">
-                Home
-            </a>
-            <a href="#" class="list-group-item list-group-item-action">Spring 2018</a>
-            <a href="#" class="list-group-item list-group-item-action">Summer 2018</a>
-            <a href="#" class="list-group-item list-group-item-action">Autumn 2018</a>
-            <a href="#" class="list-group-item list-group-item-action">Winter 2018</a>
-        </div>
-                  
+    <div class="btn-sidenav">
+        <button class="btn btn-block" (click)="sidebarService.updateTag('home')" [ngClass]="{ 'btn-primary' : sidebarService.selectedTag === 'home' }">Home</button>
+        <button class="btn btn-block" (click)="sidebarService.updateTag('summer')" [ngClass]="{ 'btn-primary' : sidebarService.selectedTag === 'summer' }">Summer 2018</button>
+        <button class="btn btn-block" (click)="sidebarService.updateTag('winter')" [ngClass]="{ 'btn-primary' : sidebarService.selectedTag === 'winter' }">Winter 2018</button>
+        <button class="btn btn-block" (click)="sidebarService.updateTag('autumn')" [ngClass]="{ 'btn-primary' : sidebarService.selectedTag === 'autumn' }">Autumn 2018</button>
+        <button class="btn btn-block" (click)="sidebarService.updateTag('spring')" [ngClass]="{ 'btn-primary' : sidebarService.selectedTag === 'spring' }">Spring 2018</button>
     </div>
 
 </div>

@@ -1,4 +1,4 @@
-<h2>Recent Uploads</h2>
+<h2>{{sidebarService.selectedTag}}</h2>
 <hr>
 <div class="images-container">
 
@@ -19,9 +19,9 @@
 
 <ngx-smart-modal #myModal identifier="myModal">
   <div class="full-image mb-3">
-    <img src={{selectedImage.main}}>
+    <img src={{selectedImage?.main}}>
   </div>
-  <h2>{{selectedImage.name}}</h2>
+  <h2>{{selectedImage?.name}}</h2>
   <p style="text-align: justify;">
     Lorem Ipsum is simply dummy text of the printing and typesetting industry. 
     Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,

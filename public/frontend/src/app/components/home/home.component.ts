@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { SidebarService } from '../../services/sidebar.service';
 
 @Component({
   selector: 'app-home',
@@ -7,15 +8,9 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HomeComponent implements OnInit {
 
-  private _opened = true;
-
-  constructor() { }
+  constructor( public sidebarService: SidebarService ) { }
 
   ngOnInit() {
-  }
-
-  private _toggleSidebar() {
-    this._opened = !this._opened;
   }
 
 }

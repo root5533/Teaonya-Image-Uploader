@@ -7,3 +7,22 @@
     display: flex;
     justify-content: center;
 }
+
+.sidebar-mobile {
+    min-height: 100vh;
+}
+
+.toggle {
+    display: none;
+}
+
+.icon {
+    font-size: 2em;
+    opacity: 0.4;
+}
+
+@media screen and ( max-width: 768px ) {
+    .toggle {
+        display: block;
+    }
+}

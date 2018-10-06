@@ -4,5 +4,10 @@
 
 .nsm-dialog {
     max-width: 1500px !important;
-    min-width: 500px !important;
+    /* min-width: 500px !important; */
+}
+
+body {
+    color: #424242;
+    background-color: #fafafa;
 }

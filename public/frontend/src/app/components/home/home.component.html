@@ -1,10 +1,11 @@
-<div class="container-fluid">
+<div class="container-fluid" style="min-height: 100vh;">
 
     <div class="row logo-container m-3">
+        <fa class="icon toggle" name="bars" style="float: right; position: absolute; left: 0; margin-left: 1em;" (click)="sidebarService.toggleSidebar()"></fa>
         <img src="assets/images/nightwing.png" class="logo">
     </div>
     
-    <div class="row p-3 mt-5">
+    <div class="row p-3 mt-5" *ngIf="sidebarService.selectedTag === 'home'">
         <div class="col-sm-12">
             <app-image-uploader></app-image-uploader>
         </div>

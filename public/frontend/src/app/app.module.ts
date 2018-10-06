@@ -11,6 +11,8 @@ import { FileSelectDirective, FileDropDirective, FileUploader } from 'ng2-file-u
 import { ImageUploaderComponent } from './components/image-uploader/image-uploader.component';
 import { ImageViewerComponent } from './components/image-viewer/image-viewer.component';
 import { NgxSmartModalModule } from 'ngx-smart-modal';
+import { SidebarService } from './services/sidebar.service';
+import { AngularFontAwesomeModule } from 'angular-font-awesome';
 
 @NgModule({
   declarations: [
@@ -27,9 +29,12 @@ import { NgxSmartModalModule } from 'ngx-smart-modal';
     BrowserModule,
     AppRoutingModule,
     SidebarModule.forRoot(),
-    NgxSmartModalModule.forRoot()
+    NgxSmartModalModule.forRoot(),
+    AngularFontAwesomeModule
   ],
-  providers: [],
+  providers: [
+    SidebarService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
