@@ -23,4 +23,8 @@ export class ImageViewerComponent implements OnInit {
     this.modalService.getModal('myModal').open();
   }
 
+  deleteImage() {
+    console.log('image deleting');
+  }
+
 }
