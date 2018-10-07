@@ -4,14 +4,16 @@
 
   <div class="image-card" *ngFor="let img of images" (click)="openModal(img)">
     <div class="thumbnail"><img src={{img.thumbnail}}></div>
-    <h4>{{img.name}}</h4>
-    <div class="desc">
-      <p>
-        Lorem Ipsum is simply dummy text of the printing and typesetting industry. 
-        Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,
-        when an unknown printer took a galley of type and scrambled it to make a type 
-        specimen book.
-      </p>
+    <div class="content">
+      <h4>{{img.name}}</h4>
+      <div class="desc">
+        <p>
+          Lorem Ipsum is simply dummy text of the printing and typesetting industry. 
+          Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,
+          when an unknown printer took a galley of type and scrambled it to make a type 
+          specimen book.
+        </p>
+      </div>
     </div>
   </div>
 
