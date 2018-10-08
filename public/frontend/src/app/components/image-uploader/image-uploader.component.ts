@@ -9,7 +9,7 @@ import { FileUploader } from 'ng2-file-upload/ng2-file-upload';
 export class ImageUploaderComponent implements OnInit {
 
   uploader: FileUploader;
-  url = 'http://localhost:3000/';
+  url = 'http://localhost:3000/upload-image';
   label = 'Choose File';
   formName: string;
   formTag: string;
@@ -23,7 +23,7 @@ export class ImageUploaderComponent implements OnInit {
       file.withCredentials = false;
     };
     this.uploader.onCompleteItem = (item: any, response: any, status: any, headers: any) => {
-      console.log('ImageUploaded: uploaded: ', item, status, response);
+      console.log(response);
     };
   }
 
