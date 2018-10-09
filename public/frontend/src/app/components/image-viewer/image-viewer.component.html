@@ -3,15 +3,12 @@
 <div class="images-container">
 
   <div class="image-card" *ngFor="let img of images" (click)="openModal(img)">
-    <div class="thumbnail"><img src={{img.thumbnail}}></div>
+    <div class="thumbnail"><img src="{{url}}/{{img.thumbnail}}"></div>
     <div class="content">
       <h4>{{img.name}}</h4>
       <div class="desc">
         <p>
-          Lorem Ipsum is simply dummy text of the printing and typesetting industry. 
-          Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,
-          when an unknown printer took a galley of type and scrambled it to make a type 
-          specimen book.
+          {{img.description}}
         </p>
       </div>
     </div>
@@ -21,15 +18,12 @@
 
 <ngx-smart-modal #myModal identifier="myModal">
   <div class="full-image mb-3">
-    <img src={{selectedImage?.main}}>
+    <img src="{{url}}/{{selectedImage?.image}}">
   </div>
   <h2>{{selectedImage?.name}}</h2>
   <p style="text-align: justify;">
-    Lorem Ipsum is simply dummy text of the printing and typesetting industry. 
-    Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,
-    when an unknown printer took a galley of type and scrambled it to make a type 
-    specimen book.
+    {{selectedImage?.description}}
   </p>
-  <button (click)="myModal.close()" class="btn btn-primary">Close</button>
-  <button class="btn btn-danger" (click)="deleteImage()" style="float: right;">Delete</button>
+  <button (click)="myModal.close()" class="btn btn-primary" style="width: 15%; min-width: 150px;">Close</button>
+  <!-- <button class="btn btn-danger" (click)="deleteImage()" style="float: right;">Delete</button> -->
 </ngx-smart-modal>

@@ -19,12 +19,18 @@ export class ImageUploaderComponent implements OnInit {
 
   ngOnInit() {
     this.uploader = new FileUploader({url: this.url, itemAlias: 'photo'});
+    this.uploader.onBuildItemForm = (item, form) => {
+      form.append('name', this.formName);
+      form.append('tag', this.formTag);
+      form.append('description', this.formDesc);
+    };
     this.uploader.onAfterAddingFile = (file) => {
       file.withCredentials = false;
     };
     this.uploader.onCompleteItem = (item: any, response: any, status: any, headers: any) => {
       console.log(response);
     };
+
   }
 
   clearForm() {

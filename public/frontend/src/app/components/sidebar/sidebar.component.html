@@ -4,12 +4,10 @@
         <h2>{{sidebarService.selectedTag}}</h2>
     </div>
 
-    <div class="btn-sidenav">
-        <button class="btn btn-block" (click)="sidebarService.updateTag('home')" [ngClass]="{ 'btn-primary' : sidebarService.selectedTag === 'home' }">Home</button>
-        <button class="btn btn-block" (click)="sidebarService.updateTag('summer')" [ngClass]="{ 'btn-primary' : sidebarService.selectedTag === 'summer' }">Summer 2018</button>
-        <button class="btn btn-block" (click)="sidebarService.updateTag('winter')" [ngClass]="{ 'btn-primary' : sidebarService.selectedTag === 'winter' }">Winter 2018</button>
-        <button class="btn btn-block" (click)="sidebarService.updateTag('autumn')" [ngClass]="{ 'btn-primary' : sidebarService.selectedTag === 'autumn' }">Autumn 2018</button>
-        <button class="btn btn-block" (click)="sidebarService.updateTag('spring')" [ngClass]="{ 'btn-primary' : sidebarService.selectedTag === 'spring' }">Spring 2018</button>
+    <div class="btn-sidenav" *ngIf="tags">
+        <button class="btn btn-block" (click)="sidebarService.updateTag('Home')" [ngClass]="{ 'btn-primary' : sidebarService.selectedTag === 'Home' }">Home</button>
+        <button class="btn btn-block" (click)="sidebarService.updateTag(tag)" [ngClass]="{ 'btn-primary' : sidebarService.selectedTag === tag }"
+            *ngFor="let tag of tags">{{tag}}</button>
     </div>
 
 </div>

@@ -11,6 +11,7 @@ export class SidebarComponent implements OnInit {
   private _opened = false;
   mobile = false;
   sidebarToggle = true;
+  tags: [];
 
   private _toggleSidebar() {
     this._opened = !this._opened;
@@ -19,6 +20,12 @@ export class SidebarComponent implements OnInit {
   constructor( public sidebarService: SidebarService ) { }
 
   ngOnInit() {
+    this.sidebarService.getTags().subscribe((tags) => {
+      if (tags) {
+        this.tags = tags['tags'];
+        // console.log(this.tags);
+      }
+    });
   }
 
 }

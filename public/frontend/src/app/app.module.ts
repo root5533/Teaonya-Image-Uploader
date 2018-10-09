@@ -13,6 +13,8 @@ import { ImageViewerComponent } from './components/image-viewer/image-viewer.com
 import { NgxSmartModalModule } from 'ngx-smart-modal';
 import { SidebarService } from './services/sidebar.service';
 import { AngularFontAwesomeModule } from 'angular-font-awesome';
+import { ImageService } from './services/image.service';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -30,10 +32,12 @@ import { AngularFontAwesomeModule } from 'angular-font-awesome';
     NgxSmartModalModule.forRoot(),
     AngularFontAwesomeModule,
     FileUploadModule,
-    FormsModule
+    FormsModule,
+    HttpClientModule
   ],
   providers: [
-    SidebarService
+    SidebarService,
+    ImageService
   ],
   bootstrap: [AppComponent]
 })
