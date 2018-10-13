@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FileUploader } from 'ng2-file-upload/ng2-file-upload';
 import { URL } from '../../constants/api';
+import { SidebarService } from '../../services/sidebar.service';
 
 @Component({
   selector: 'app-image-uploader',
@@ -16,7 +17,7 @@ export class ImageUploaderComponent implements OnInit {
   formTag: string;
   formDesc: string;
 
-  constructor() { }
+  constructor( private sidebarService: SidebarService ) { }
 
   ngOnInit() {
     this.uploader = new FileUploader({url: this.url, itemAlias: 'photo'});
@@ -29,7 +30,7 @@ export class ImageUploaderComponent implements OnInit {
       file.withCredentials = false;
     };
     this.uploader.onCompleteItem = (item: any, response: any, status: any, headers: any) => {
-      console.log(response);
+      this.sidebarService.tagChange('Home');
     };
 
   }

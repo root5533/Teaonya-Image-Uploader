@@ -33,7 +33,12 @@ export class ImageViewerComponent implements OnInit {
       // console.log(tag);
       if (tag !== null) {
         if ( tag === 'Home') {
-          this.images = this.recents;
+          this.imageService.getRecentUploads().subscribe((res) => {
+            if (res['images']) {
+              this.recents = res['images'];
+              this.images = res['images'];
+            }
+          });
         } else {
           this.imageService.getTagUploads(tag).subscribe((res) => {
             // console.log(res['images']);
