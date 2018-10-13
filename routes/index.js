@@ -6,8 +6,11 @@ var Image = require('../models/image');
 var DIR = './public/upload/';
 
 /* GET home page. */
-router.get('/', function(req, res, next) {
-  res.render('index', { title: 'Express' });
+// router.get('/', function(req, res, next) {
+//   res.render('index', { title: 'Express' });
+// });
+router.get('/', (req, res, next) => {
+  res.sendfile('./public/index.html');
 });
 
 var storage = multer.diskStorage({

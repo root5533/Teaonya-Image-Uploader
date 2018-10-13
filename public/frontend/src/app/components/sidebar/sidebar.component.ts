@@ -11,7 +11,7 @@ export class SidebarComponent implements OnInit {
   private _opened = false;
   mobile = false;
   sidebarToggle = true;
-  tags: [];
+  tags: any;
 
   private _toggleSidebar() {
     this._opened = !this._opened;
