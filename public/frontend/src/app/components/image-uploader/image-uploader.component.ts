@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FileUploader } from 'ng2-file-upload/ng2-file-upload';
+import { URL } from '../../constants/api';
 
 @Component({
   selector: 'app-image-uploader',
@@ -9,7 +10,7 @@ import { FileUploader } from 'ng2-file-upload/ng2-file-upload';
 export class ImageUploaderComponent implements OnInit {
 
   uploader: FileUploader;
-  url = 'http://localhost:3000/upload-image';
+  url = URL;
   label = 'Choose File';
   formName: string;
   formTag: string;
