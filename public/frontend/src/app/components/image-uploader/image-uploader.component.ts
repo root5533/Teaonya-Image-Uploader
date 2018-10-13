@@ -10,7 +10,7 @@ import { URL } from '../../constants/api';
 export class ImageUploaderComponent implements OnInit {
 
   uploader: FileUploader;
-  url = URL;
+  url = URL + '/upload-image';
   label = 'Choose File';
   formName: string;
   formTag: string;
